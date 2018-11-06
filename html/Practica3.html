@@ -1,0 +1,477 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Pr&aacute;ctica 3: Se&ntilde;ales continuas</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-11-05"><meta name="DC.source" content="Practica3.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Pr&aacute;ctica 3: Se&ntilde;ales continuas</h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Datos generales:</a></li><li><a href="#3">Objetivos:</a></li><li><a href="#5">Introduccion</a></li><li><a href="#6">Desarrollo</a></li><li><a href="#7">Funcion uno</a></li><li><a href="#8">Ejercicio dos</a></li><li><a href="#9">Ejercicio tres</a></li><li><a href="#10">Ejercicio cuatro</a></li><li><a href="#20">Ejercicio cinco</a></li><li><a href="#24">Referencias</a></li></ul></div><h2>Datos generales:<a name="1"></a></h2><p>Autores:</p><div><ul><li>Marmolejo Mart&iacute;nez Hamlet</li></ul></div><div><ul><li>Ortiz Velazco Jaime Jonathan</li></ul></div><div><ul><li>Perez Sanchez Isaac</li></ul></div><p>Grupo: 2TV2</p><p>Profesor: Dr. Rafael Martinez Martinez</p><h2>Objetivos:<a name="3"></a></h2><div><ul><li>Manipulaci&oacute;n b&aacute;sica de MATLAB</li><li>Gr&aacute;ficas de se&ntilde;ales reales y complejas continuas</li><li>Transformaci&oacute;n de se&ntilde;ales continuas (escalamientos y traslaciones)</li><li>Calculo de energ&iacute;a y potencia de se&ntilde;ales continuas</li></ul></div><h2>Introduccion<a name="5"></a></h2><pre class="language-matlab">A <span class="string">continuacion</span> <span class="string">observaremos</span> <span class="string">atravez</span> <span class="string">de</span> <span class="string">Matlab</span> <span class="string">la</span> <span class="string">graficacion</span> <span class="string">de</span> <span class="string">se&ntilde;ales</span>
+tanto <span class="string">reales</span> <span class="string">como</span> <span class="string">complejas</span>, ademas <span class="string">de</span> <span class="string">utilizar</span> <span class="string">el</span> <span class="string">software</span> <span class="string">como</span> <span class="string">ayuda</span>
+para <span class="string">la</span> <span class="string">rapida</span> <span class="string">obtencion</span> <span class="string">de</span> <span class="string">transformaciones</span> <span class="string">de</span> <span class="string">se&ntilde;ales</span> <span class="string">continuas</span>, con
+sus <span class="string">respetivos</span> <span class="string">translaciones</span> <span class="string">y</span> <span class="string">escalamientos.</span>
+</pre><h2>Desarrollo<a name="6"></a></h2><h2>Funcion uno<a name="7"></a></h2><p>Crea una funci&oacute;n que se llame fun1 y reciba dos parametros <img src="Practica3_eq08589834809570054062.png" alt="$\omega$"> y <img src="Practica3_eq05508344529756732484.png" alt="$a$"> la funci&oacute;n debe regresar la evaluaci&oacute;n <img src="Practica3_eq01407365636722940873.png" alt="$F(\omega)=a/(a^2+\omega^2)$">, esta funci&oacute;n debe trabajr con <img src="Practica3_eq16064389548595522758.png" alt="$a\in R$">.</p><p>La funcion quedara de la siguiente manera:</p><pre class="language-matlab"><span class="keyword">function</span> [f]=fun1(omega,a)  <span class="comment">%f la tomaremos como F(w)</span>
+    f=a/(a^2+omega^2);
+<span class="keyword">end</span>
+</pre><h2>Ejercicio dos<a name="8"></a></h2><p>Esta imagen muestra la gr&aacute;fica de <img src="Practica3_eq04634431881849194213.png" alt="$F(\omega)$"> vs <img src="Practica3_eq08589834809570054062.png" alt="$\omega$"> en el intervalo <img src="Practica3_eq01169792831847459841.png" alt="$[-2,2]$"> para <img src="Practica3_eq13016372792947090052.png" alt="$a=1$"></p><p><img vspace="5" hspace="5" src="OMEGA.PNG" alt=""> </p><h2>Ejercicio tres<a name="9"></a></h2><pre class="codeinput">syms <span class="string">t</span> <span class="string">w</span>
+syms <span class="string">a</span> <span class="string">positive</span>
+
+f= exp(-2.*t)*heaviside(t);
+F=fourier(f);
+F
+</pre><pre class="codeoutput"> 
+F =
+ 
+1/(2 + w*1i)
+ 
+</pre><h2>Ejercicio cuatro<a name="10"></a></h2><p>Realizamos una funcion anonima que calcule <img src="Practica3_eq04163059767162851336.png" alt="$f(t)=cos(2 \pi t)*e^-t$">. Que quedara de la siguiente manera:</p><pre class="codeinput"> f = @(t) exp(-t).*cos(2*pi*t);
+<span class="comment">% El unico parametro que hay que pasarle</span>
+<span class="comment">% es el valor de t. Ejemplo:</span>
+f(0)
+</pre><pre class="codeoutput">
+ans =
+
+     1
+
+</pre><p>Tambien podemos evaluar la funcion en un vector si lo declaramos, por ejemplo:</p><pre class="codeinput">t=[-2:2];
+f(t)
+</pre><pre class="codeoutput">
+ans =
+
+    7.3891    2.7183    1.0000    0.3679    0.1353
+
+</pre><p>Estos valores que toma f(t) pueden ser graficados con la funcion plot de la siguiente manera:</p><pre class="codeinput">plot(t,f(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'f(t)'</span>); grid;
+</pre><img vspace="5" hspace="5" src="Practica3_01.png" alt=""> <p>Aunque la funcion anterior nos diera la grafica de la funcion se puede notar que por la cantidad de puntos mostrados no vemos el comportamiento que quisieramos. Para arreglar esto lo que tenemos que hacer es a&ntilde;adir mas puntos a nuestro vector como se muestra a continuacion.</p><pre class="codeinput">t =[-2:0.01:2];
+<span class="comment">% Con esto nos evaluara la funcion en 100 puntos</span>
+plot(t,f(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'f(t)'</span>); grid;
+</pre><img vspace="5" hspace="5" src="Practica3_02.png" alt=""> <p>Esta ultima grafica ya es muy parecida a lo que buscabamos.</p><p>El escalon unitario es una de las funciones mas utiles y que en muchos casos nos facilita la forma de trabajar con otras funciones, y por todo esto es que quisieramos tenerla disponible en Matlab y para ello nuevamente utilizaremos las funciones anonimas.</p><p>En matlab se pueden hacer comparaciones si asi lo queremos. Cuando la comparacion es verdadera regresa un 1 y si es falsa un 0. Matlab nos brinda seis operadores validos para comparar, los cuales son: '&lt;', '&gt;', '&gt;=', '&lt;=', '==' y '~='.</p><p>Dicho esto podemos definir nuestro escalon con la ayuda del operador &gt;=</p><pre class="codeinput">u = @(t) t&gt;=0;
+<span class="comment">% Cualquier funcion con discontinuidades es dificl de graficar. Hagamoslo</span>
+<span class="comment">% para t=(-2,2)</span>
+t=[-2:2];
+plot(t, u(t));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'u(t)'</span>);
+</pre><img vspace="5" hspace="5" src="Practica3_03.png" alt=""> <p>Claramente notamos que la grafica de arriba es dificil de ver y pareciera una grafica totalmente distinta y esto se debe a que los ejes no estan bien distribuidos, cosa que podemos arreglar con la funcion axis que nos ayuda a marcar los limites los ejes y tambien agregando mas puntos al vector para que la linea no parezca diagonal.</p><pre class="codeinput">t =[-2:0.01:2];
+plot (t,u(t));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'u(t)'</span>);
+axis ([-2 2 -0.1 1.1]);
+</pre><img vspace="5" hspace="5" src="Practica3_04.png" alt=""> <p>Los operadores logicos se pueden combinar, podemos probar esto realizando una funcion p(t)=u(t)-u(t-1)</p><pre class="codeinput">p = @(t) (t&gt;=0) &amp; (t&lt;1);
+t = [-1:0.01:2];
+plot(t,p(t));
+xlabel(<span class="string">'t'</span>); ylabel(<span class="string">'p(t) = u(t)-u(t-1)'</span>);
+axis ([-1 2 -.1 1.1]);
+</pre><img vspace="5" hspace="5" src="Practica3_05.png" alt=""> <p>Algunas veces necesitaremos multiplicar funciones ya que buscamos escalarlas o desplazarlas.</p><p>Consideremos la funcion <img src="Practica3_eq07478188316702542661.png" alt="$g(t)=f(t)u(t)=e^-t*cos(2 \pi t)u(t)$"> .Matlab no nos permite multiplicar funciones anonimas, para ello debemos tener bien definida a <img src="Practica3_eq00097224828082125527.png" alt="$g(t)$"></p><pre class="codeinput">g = @(t) exp(-t).*cos(2*pi*t).*(t&gt;=0);
+</pre><p>La definicion general de un escalamiento y un desplazamiento seria <img src="Practica3_eq15110653458722215955.png" alt="$g(at+b)$"> donde a y b son constantes reales arbitrarias. Como ejemplo hagamos a <img src="Practica3_eq14491512693946539684.png" alt="$g(2t+1)$"> en (-2&lt;t&lt;2).</p><pre class="codeinput">t = [-2:0.01:2];
+plot(t,g(2*t+1));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'g(2t+1)'</span>);
+grid;
+</pre><img vspace="5" hspace="5" src="Practica3_06.png" alt=""> <p>La grafica es la esperada ya que deberia comenzar en -0.5 y tener oscilaciones mas frecuentes.</p><p>Lo que haremos ahora sera graficar una funcion un poco mas compleja, <img src="Practica3_eq03305972198989848859.png" alt="$h(t)=g(2t + 1) + g(?1t + 1)$"> en (-2&lt;t&lt;2)</p><pre class="codeinput">plot(t,g(-t+1));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'g(-t+1)'</span>);
+grid;
+plot(t,g(2*t+1) +g(-t+1));
+xlabel(<span class="string">'t'</span>);
+ylabel(<span class="string">'h(t)'</span>);
+grid;
+</pre><img vspace="5" hspace="5" src="Practica3_07.png" alt=""> <h2>Ejercicio cinco<a name="20"></a></h2><p>Realizamos una funcion anonima que calcule <img src="Practica3_eq04163059767162851336.png" alt="$f(t)=cos(2 \pi t)*e^-t$">. Que quedara de la siguiente manera:</p><pre class="codeinput">t = (-8:0.01:4);
+ f = @(t) -t.*(t&gt;=-4)+2.*t.*(t&gt;=0)-t.*(t&gt;=2);
+<span class="comment">% El unico parametro que hay que pasarle</span>
+<span class="comment">% es el valor de t. Ejemplo:</span>
+subplot(6,1,1);
+plot(t,f(t));
+<span class="comment">%ahora resolvamos para el inciso a) x(t-4)</span>
+subplot(6,1,2);
+plot(t,f(t-4));
+<span class="comment">%ahora resolvamos para el inciso b) x(t/1.5)</span>
+subplot(6,1,3);
+plot(t,f(t./1.5));
+<span class="comment">%ahora resolvamos para el inciso c)x(-t)</span>
+subplot(6,1,4);
+plot(t,f(-t));
+<span class="comment">%ahora resolvamos para el inciso d)x(2t-4)</span>
+subplot(6,1,5);
+plot(t,f(2.*t-4));
+<span class="comment">%ahora resolvamos para el inciso d)x(2-t)</span>
+subplot(6,1,6);
+plot(t,f(2-t));
+</pre><img vspace="5" hspace="5" src="Practica3_08.png" alt=""> <pre class="codeinput"><span class="comment">%%Ejercicio 6</span>
+<span class="comment">%Hacemos una funcion que recibe como parametro la formula de una se&ntilde;al y</span>
+<span class="comment">%regresa el resultado del calculo de su energ&iacute;a suponiendo que la funci&oacute;n</span>
+<span class="comment">%de entrada es una funci&oacute;n de energia</span>
+<span class="comment">%</span>
+<span class="comment">% La funcion quedara de la siguiente manera:</span>
+<span class="comment">%</span>
+<span class="comment">%   function [energia]=ex(c,li, ls)  %f la tomaremos como F(w)</span>
+<span class="comment">%       energia=integral(x^2,li,ls);</span>
+<span class="comment">%   end</span>
+<span class="comment">%</span>
+
+<span class="comment">%Ahora calculamos la energ&iacute;a del ejercicio 1.1.3 inciso a</span>
+<span class="comment">% syms t;</span>
+<span class="comment">% ex(1,0,2)</span>
+<span class="comment">%Inciso b</span>
+<span class="comment">% ex(1,0,1)</span>
+<span class="comment">%Inciso c</span>
+<span class="comment">% ex(sin(t),0,pi)</span>
+</pre><pre class="codeinput"><span class="comment">%%Ejercicio 7</span>
+<span class="comment">%Hacemos una funcion que recibe como parametro la formula de una se&ntilde;al y</span>
+<span class="comment">%los limites superiores e inferiores de un ciclo de la se&ntilde;al y se</span>
+<span class="comment">%regresa el resultado del calculo de su potencia suponiendo que la funci&oacute;n</span>
+<span class="comment">%de entrada es una funci&oacute;n de potencia</span>
+<span class="comment">%</span>
+<span class="comment">%</span>
+<span class="comment">% function [potencia,rms] = px(x,li,ls)</span>
+<span class="comment">%    if li&lt;0</span>
+<span class="comment">%        li=(-1)*li;</span>
+<span class="comment">%    end</span>
+<span class="comment">%    potencia=(1/(li+ls))*(integral(x^2,-li/2,ls/2))</span>
+<span class="comment">%    rms=sqrt(potencia)</span>
+<span class="comment">% end</span>
+</pre><pre class="codeinput"><span class="comment">%Resolvemos el ejercicio 1.1.4</span>
+<span class="comment">%Inciso a</span>
+syms <span class="string">x</span> <span class="string">c</span>;
+xt=x^3;
+px(-1*xt,-2,2)
+<span class="comment">%Inciso b</span>
+px(2*xt,-2,2)
+<span class="comment">%Inciso c</span>
+px(c*xt,-2,2)
+</pre><pre class="codeoutput"> 
+potencia =
+ 
+1/14
+ 
+ 
+rms =
+ 
+0.26726
+ 
+ 
+ans =
+ 
+1/14
+ 
+ 
+potencia =
+ 
+2/7
+ 
+ 
+rms =
+ 
+0.53452
+ 
+ 
+ans =
+ 
+2/7
+ 
+ 
+potencia =
+ 
+c^2/14
+ 
+ 
+rms =
+ 
+(0.071429*c^2)^(1/2)
+ 
+ 
+ans =
+ 
+c^2/14
+ 
+</pre><h2>Referencias<a name="24"></a></h2><p>B. P. Lathi, Linear Systems and Signals, Second Edition, Oxford University Press, Inc.,  2005, segunda edicion, pp. 689.</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Práctica 3: Señales continuas
+%% Datos generales:
+% Autores:
+%
+% * Marmolejo Martínez Hamlet 
+%
+% * Ortiz Velazco Jaime Jonathan
+%
+% * Perez Sanchez Isaac 
+%
+% Grupo: 2TV2 
+%
+% Profesor: Dr. Rafael Martinez Martinez
+%%
+%% Objetivos:
+% *  Manipulación básica de MATLAB
+% *  Gráficas de señales reales y complejas continuas
+% *  Transformación de señales continuas (escalamientos y traslaciones)
+% *  Calculo de energía y potencia de señales continuas
+%%
+%% Introduccion
+%   A continuacion observaremos atravez de Matlab la graficacion de señales
+%   tanto reales como complejas, ademas de utilizar el software como ayuda
+%   para la rapida obtencion de transformaciones de señales continuas, con
+%   sus respetivos translaciones y escalamientos.
+%% Desarrollo
+%
+%% Funcion uno
+%
+% Crea una función que se llame fun1 y reciba dos parametros $\omega$ y $a$ la función debe regresar la evaluación $F(\omega)=a/(a^2+\omega^2)$, esta función debe trabajr con $a\in R$.
+%
+% La funcion quedara de la siguiente manera: 
+%
+%   function [f]=fun1(omega,a)  %f la tomaremos como F(w)
+%       f=a/(a^2+omega^2);  
+%   end
+% 
+%% Ejercicio dos
+% Esta imagen muestra la gráfica de $F(\omega)$ vs $\omega$ en el intervalo $[-2,2]$ para $a=1$
+%
+% 
+% <<OMEGA.PNG>>
+% 
+%
+%% Ejercicio tres
+%
+syms t w
+syms a positive
+
+f= exp(-2.*t)*heaviside(t);
+F=fourier(f);
+F
+%% Ejercicio cuatro
+%
+% Realizamos una funcion anonima que calcule $f(t)=cos(2 \pi t)*e^-t$. Que
+% quedara de la siguiente manera: 
+%
+ f = @(t) exp(-t).*cos(2*pi*t);   
+% El unico parametro que hay que pasarle
+% es el valor de t. Ejemplo: 
+f(0)
+%%
+% Tambien podemos evaluar la funcion en un vector si lo declaramos, por
+% ejemplo:
+t=[-2:2];
+f(t)
+%%
+% Estos valores que toma f(t) pueden ser graficados con la funcion plot de
+% la siguiente manera:
+plot(t,f(t));
+xlabel('t'); ylabel('f(t)'); grid;
+%%
+% Aunque la funcion anterior nos diera la grafica de la funcion se puede
+% notar que por la cantidad de puntos mostrados no vemos el comportamiento
+% que quisieramos. Para arreglar esto lo que tenemos que hacer es añadir
+% mas puntos a nuestro vector como se muestra a continuacion.
+t =[-2:0.01:2];
+% Con esto nos evaluara la funcion en 100 puntos
+plot(t,f(t));
+xlabel('t'); ylabel('f(t)'); grid;
+%%
+% Esta ultima grafica ya es muy parecida a lo que buscabamos.
+%
+% El escalon unitario es una de las funciones mas utiles y que en muchos
+% casos nos facilita la forma de trabajar con otras funciones, y por todo
+% esto es que quisieramos tenerla disponible en Matlab y para ello
+% nuevamente utilizaremos las funciones anonimas.
+%
+% En matlab se pueden hacer comparaciones si asi lo queremos. Cuando la
+% comparacion es verdadera regresa un 1 y si es falsa un 0. Matlab nos
+% brinda seis operadores validos para comparar, los cuales son: '<', '>',
+% '>=', '<=', '==' y '~='.
+%
+% Dicho esto podemos definir nuestro escalon con la ayuda del operador >=
+u = @(t) t>=0;
+% Cualquier funcion con discontinuidades es dificl de graficar. Hagamoslo
+% para t=(-2,2)
+t=[-2:2];
+plot(t, u(t));
+xlabel('t'); 
+ylabel('u(t)');
+%%
+% Claramente notamos que la grafica de arriba es dificil de ver y pareciera
+% una grafica totalmente distinta y esto se debe a que los ejes no estan
+% bien distribuidos, cosa que podemos arreglar con la funcion axis que nos
+% ayuda a marcar los limites los ejes y tambien agregando mas puntos al
+% vector para que la linea no parezca diagonal. 
+t =[-2:0.01:2];
+plot (t,u(t));
+xlabel('t'); 
+ylabel('u(t)');
+axis ([-2 2 -0.1 1.1]);
+%%
+% Los operadores logicos se pueden combinar, podemos probar esto realizando
+% una funcion p(t)=u(t)-u(t-1)
+p = @(t) (t>=0) & (t<1);
+t = [-1:0.01:2]; 
+plot(t,p(t));
+xlabel('t'); ylabel('p(t) = u(t)-u(t-1)');
+axis ([-1 2 -.1 1.1]);
+%%
+% Algunas veces necesitaremos multiplicar funciones ya que buscamos
+% escalarlas o desplazarlas.
+%
+% Consideremos la funcion $g(t)=f(t)u(t)=e^-t*cos(2 \pi t)u(t)$ .Matlab no
+% nos permite multiplicar funciones anonimas, para ello debemos tener bien
+% definida a $g(t)$
+g = @(t) exp(-t).*cos(2*pi*t).*(t>=0);
+%%
+% La definicion general de un escalamiento y un desplazamiento seria
+% $g(at+b)$ donde a y b son constantes reales arbitrarias. Como ejemplo
+% hagamos a $g(2t+1)$ en (-2<t<2). 
+t = [-2:0.01:2];
+plot(t,g(2*t+1)); 
+xlabel('t'); 
+ylabel('g(2t+1)'); 
+grid;
+%%
+% La grafica es la esperada ya que deberia comenzar en -0.5 y tener
+% oscilaciones mas frecuentes.
+%
+% Lo que haremos ahora sera graficar una funcion un poco mas compleja,
+% $h(t)=g(2t + 1) + g(?1t + 1)$ en (-2<t<2)
+plot(t,g(-t+1)); 
+xlabel('t'); 
+ylabel('g(-t+1)');
+grid;
+plot(t,g(2*t+1) +g(-t+1));
+xlabel('t');
+ylabel('h(t)');
+grid;
+%% Ejercicio cinco
+%
+% Realizamos una funcion anonima que calcule $f(t)=cos(2 \pi t)*e^-t$. Que
+% quedara de la siguiente manera: 
+%
+t = (-8:0.01:4);
+ f = @(t) -t.*(t>=-4)+2.*t.*(t>=0)-t.*(t>=2); 
+% El unico parametro que hay que pasarle
+% es el valor de t. Ejemplo: 
+subplot(6,1,1);
+plot(t,f(t));
+%ahora resolvamos para el inciso a) x(t-4)
+subplot(6,1,2);
+plot(t,f(t-4));
+%ahora resolvamos para el inciso b) x(t/1.5)
+subplot(6,1,3);
+plot(t,f(t./1.5));
+%ahora resolvamos para el inciso c)x(-t)
+subplot(6,1,4);
+plot(t,f(-t));
+%ahora resolvamos para el inciso d)x(2t-4)
+subplot(6,1,5);
+plot(t,f(2.*t-4));
+%ahora resolvamos para el inciso d)x(2-t)
+subplot(6,1,6);
+plot(t,f(2-t));
+%%
+%%Ejercicio 6
+%Hacemos una funcion que recibe como parametro la formula de una señal y
+%regresa el resultado del calculo de su energía suponiendo que la función
+%de entrada es una función de energia
+%
+% La funcion quedara de la siguiente manera: 
+%
+%   function [energia]=ex(c,li, ls)  %f la tomaremos como F(w)
+%       energia=integral(x^2,li,ls);  
+%   end
+% 
+
+%Ahora calculamos la energía del ejercicio 1.1.3 inciso a
+% syms t;
+% ex(1,0,2)
+%Inciso b
+% ex(1,0,1)
+%Inciso c
+% ex(sin(t),0,pi)
+%%
+%%Ejercicio 7
+%Hacemos una funcion que recibe como parametro la formula de una señal y
+%los limites superiores e inferiores de un ciclo de la señal y se
+%regresa el resultado del calculo de su potencia suponiendo que la función
+%de entrada es una función de potencia
+%
+%
+% function [potencia,rms] = px(x,li,ls)
+%    if li<0
+%        li=(-1)*li;
+%    end
+%    potencia=(1/(li+ls))*(integral(x^2,-li/2,ls/2))
+%    rms=sqrt(potencia)
+% end
+%%
+%Resolvemos el ejercicio 1.1.4
+%Inciso a
+syms x c;
+xt=x^3;
+px(-1*xt,-2,2)
+%Inciso b
+px(2*xt,-2,2)
+%Inciso c
+px(c*xt,-2,2)
+%% Referencias
+% B. P. Lathi, Linear Systems and Signals, Second Edition, Oxford
+% University Press, Inc.,  2005, segunda edicion, pp. 689.
+
+##### SOURCE END #####
+--></body></html>
